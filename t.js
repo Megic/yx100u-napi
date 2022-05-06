@@ -1,0 +1,3 @@
+
+const cvr = require('./index');
+
