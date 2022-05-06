@@ -144,36 +144,6 @@ hardware.SDT_ReadBaseMsg = (port) => {
 
 
 
-hardware.GetPersonMsg = () => {
-  try {
-    const personInfo = new PersonInfoA();
-    const folder = fs.mkdtempSync(`${os.tmpdir()}${path.sep}`);
-    const image = path.join(folder, 'image.bmp');
-    const res = libcvr.GetPersonMsgA(personInfo.ref(), image);
-    if (res === 0) {
-      return { error: 0, data: {
-        name: iconv.decode(Buffer.from(personInfo.name), 'gbk').replace(re, '').trim(),
-        sex: iconv.decode(Buffer.from(personInfo.sex), 'gbk').replace(re, '').trim(),
-        nation: iconv.decode(Buffer.from(personInfo.nation), 'gbk').replace(re, '').trim(),
-        birthday: iconv.decode(Buffer.from(personInfo.birthday), 'gbk').replace(re, '').trim(),
-        address: iconv.decode(Buffer.from(personInfo.address), 'gbk').replace(re, '').trim(),
-        cardId: iconv.decode(Buffer.from(personInfo.cardId), 'gbk').replace(re, '').trim(),
-        police: iconv.decode(Buffer.from(personInfo.police), 'gbk').replace(re, '').trim(),
-        validStart: iconv.decode(Buffer.from(personInfo.validStart), 'gbk').replace(re, '').trim(),
-        validEnd: iconv.decode(Buffer.from(personInfo.validEnd), 'gbk').replace(re, '').trim(),
-        sexCode: iconv.decode(Buffer.from(personInfo.sexCode), 'gbk').replace(re, '').trim(),
-        nationCode: iconv.decode(Buffer.from(personInfo.nationCode), 'gbk').replace(re, '').trim(),
-        appendMsg: iconv.decode(Buffer.from(personInfo.appendMsg), 'gbk').replace(re, '').trim(),
-        image,
-      } };
-    }
-    return { error: -1 };
-  } catch (e) {
-    return { error: -1 };
-  }
-};
-
-
 
 
 module.exports = hardware;

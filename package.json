@@ -1,7 +1,7 @@
 {
   "name": "YXU100-napi",
-  "version": "1.4.2",
-  "description": "Driver for cvr-100",
+  "version": "1.0.0",
+  "description": "Driver for YX-U100",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
