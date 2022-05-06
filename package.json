@@ -1,6 +1,6 @@
 {
-  "name": "YXU100-napi",
-  "version": "1.0.0",
+  "name": "yxu100-napi",
+  "version": "1.0.1",
   "description": "Driver for YX-U100",
   "main": "index.js",
   "scripts": {
