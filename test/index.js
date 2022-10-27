@@ -5,8 +5,8 @@ describe('test com port connect', () => {
 
   it('should open USB successfully', () => {
 
-    const { error } = cvr.SDT_OpenPort(1001);
-  
+    const { error } = cvr.SDT_SelectIDCard(1001);
+    console.log(error,'xx1');
     assert(error === 0);
   });
   it('should read idcard successfully', () => {
@@ -17,10 +17,10 @@ describe('test com port connect', () => {
   
     console.log(res);
     assert(res.error === 0);
-    cvr.SDT_ClosePort(1001);
+   // cvr.SDT_ClosePort(1001);
   });
   after(() => {
-    cvr.SDT_ClosePort(1001);
+   // cvr.SDT_ClosePort(1001);
   });
 });
 

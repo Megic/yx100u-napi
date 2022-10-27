@@ -101,7 +101,7 @@ hardware.SDT_StartFindIDCard = (port) => {
 hardware.SDT_SelectIDCard = (port) => {
   try {
     const pucIIN = ref.alloc(ref.types.char);
-    const res = libcvr.SDT_SelectIDCard(port,pucIIN,0);
+    const res = libcvr.SDT_SelectIDCard(port,pucIIN,1);
     if (res === 144) {
       return { error: 0 };
     }
