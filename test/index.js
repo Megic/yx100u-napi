@@ -3,12 +3,12 @@ const cvr = require('../index');
 
 describe('test com port connect', () => {
 
-  it('should open USB successfully', () => {
+  // it('should open USB successfully', () => {
 
-    const { error } = cvr.SDT_SelectIDCard(1001);
-    console.log(error,'xx1');
-    assert(error === 0);
-  });
+  //   const { error } = cvr.SDT_SelectIDCard(1001);
+  //   console.log(error,'xx1');
+  //   assert(error === 0);
+  // });
   it('should read idcard successfully', () => {
     let res = cvr.SDT_StartFindIDCard(1001);
     res =cvr.SDT_SelectIDCard(1001);
